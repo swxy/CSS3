@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Gradient Border Color</title>
+	
+	<style>
+		.box1 {
+			position: relative;
+			width: 210px;
+			height: 210px;
+			background: #EEEEEE;
+			border-top: 20px solid #3ACFD5;
+			border-bottom: 20px solid #3A4ED5;
+			padding: 0 20px;
+			margin: 20px;
+		}
+
+		.box1:before,
+		.box1:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 20px;
+		    background-image: -webkit-linear-gradient(#3ACFD5 0%, #3A4ED5 100%);
+		    background-image: -o-linear-gradient(#3ACFD5 0%, #3A4ED5 100%);
+		    background-image: linear-gradient(#3ACFD5 0%, #3A4ED5 100%);
+		}
+
+		.box1:after {
+			left: auto;
+			right: 0;
+		}
+
+		.box2 {
+			position: relative;
+			width: 210px;
+			height: 210px;
+			background: #EEEEEE;
+			margin: 20px;
+			padding: 20px;
+		}
+
+		.box2:before,
+		.box2:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			bottom: 0;
+			height: 100%;
+			width: 100%;		
+		}
+
+		.box2:before{
+			background-position: 0 0, 0 100% ;
+			background-repeat: no-repeat;
+			-webkit-background-size: 100% 20px;
+			-moz-background-size: 100% 20px;
+			background-size: 100% 20px;
+			background-image: -webkit-linear-gradient(to right, #3ACFD5 0%, #3A8ED5 100%), -webkit-linear-gradient(right, #3A4ED5 0%, #3A8ED5 100%);
+			background-image: -moz-linear-gradient(to right, #3ACFD5 0%, #3A8ED5 100%), -moz-linear-gradient(right, #3A4ED5 0%, #3A8ED5 100%);
+			background-image: -o-linear-gradient(to right, #3ACFD5 0%, #3A8ED5 100%), -o-linear-gradient(right, #3A4ED5 0%, #3A8ED5 100%);
+			background-image: linear-gradient(to right, #3ACFD5 0%, #3A8ED5 100%), linear-gradient(to left, #3A4ED5 0%, #3A8ED5 100%);
+		}
+
+		.box2:after {
+			background-position: 0 0, 100% 0;
+			background-repeat: no-repeat;
+			-webkit-background-size: 20px 100%;
+			-moz-background-size: 20px 100%;
+			background-size: 20px 100%;
+			background-image: -webkit-linear-gradient(top, #3ACFD5 0%, #3A8ED5 100%), -webkit-linear-gradient(to top, #3A4ED5 0%, #3A8ED5 100%);
+			background-image: -moz-linear-gradient(top, #3ACFD5 0%, #3A8ED5 100%), -moz-linear-gradient(to top, #3A4ED5 0%, #3A8ED5 100%);
+			background-image: -o-linear-gradient(top, #3ACFD5 0%, #3A8ED5 100%), -o-linear-gradient(to top, #3A4ED5 0%, #3A8ED5 100%);
+			background-image: linear-gradient(to bottom, #3ACFD5 0%, #3A8ED5 100%), linear-gradient(to top, #3A4ED5 0%, #3A8ED5 100%);
+
+			}
+
+		.box3 {
+			width: 250px;
+		    height: 250px;
+		    background: #EEEEEE;
+		    border: 20px solid transparent;
+		    -moz-border-image: -moz-linear-gradient(top, #3ACFD5 0%, #3A4ED5 100%);
+		    -webkit-border-image: -webkit-linear-gradient(top, #3ACFD5 0%, #3A4ED5 100%);
+		    border-image: linear-gradient(to bottom, #3ACFD5 0%, #3A4ED5 100%);
+		    border-image-slice: 1;
+		    margin: 20px;
+		    box-sizing: border-box;
+		}
+
+		.box4 {
+			width: 250px;
+			height: 250px;
+			margin: auto;
+			background: #EEEEEE;
+			border: 20px solid transparent;
+			-moz-border-image: -moz-linear-gradient(top left, #3ACFD5 0%, #3A4ED5 100%);
+			-webkit-border-image: -webkit-linear-gradient(top left, #3ACFD5 0%, #3A4ED5 100%);
+			border-image: linear-gradient(to bottom right, #3ACFD5 0%, #3A4ED5 100%);
+			border-image-slice: 1;
+			margin: 20px;
+		    box-sizing: border-box;
+		}
+
+	</style>
+
+</head>
+<body>
+	<div>
+		<h2>第一种方法</h2>
+		<div class="box1">
+			这个是利用CSS3伪元素来实现边框自上而下渐变的
+		</div>
+		<div class="box2">
+			这个是利用CSS3伪元素实现的斜对角渐变效果
+		</div>
+
+		<h2>第二种方法</h2>
+		<div class="box3">
+			这个是利用border-image实现的自上而下渐变效果
+		</div>
+		<div class="box4">
+			这个是利用border-image实现的斜对角渐变效果
+		</div>
+	</div>
+</body>
+</html>
