@@ -1,0 +1,140 @@
+.container {
+  border: 1px solid #dddddd;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.c1 input {
+  display: none;
+}
+.c1 label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  border: 1px solid #ededed;
+  cursor: pointer;
+  transition: all .2s ease;
+  margin-right: 30px;
+}
+.c1 label:after {
+  content: '';
+  display: block;
+  position: relative;
+  width: 15px;
+  height: 7px;
+  left: 2px;
+  top: 3px;
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  transform: rotate(-45deg);
+  transition: border-color 0.2s ease;
+}
+.c1 input:checked + label:after {
+  border-color: #f00;
+}
+.c1 .bg:checked + label {
+  border-color: #e4e5df;
+  background-color: #e4e5df;
+}
+.c2 input {
+  -webkit-appearance: none;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  margin-right: 30px;
+}
+.c2 input:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  border: 1px solid #ededed;
+  transition: all .2s ease;
+}
+.c2 input:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 7px;
+  left: 3px;
+  top: 4px;
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  transform: rotate(-45deg);
+  transition: border-color 0.2s ease;
+}
+.c2 input:checked:after {
+  border-color: #f00;
+}
+.c2 .bg:checked:before {
+  border-color: #e4e5df;
+  background-color: #e4e5df;
+}
+.c3 input {
+  display: none;
+}
+.c3 label {
+  position: relative;
+  cursor: pointer;
+  margin-right: 30px;
+}
+.c3 .before:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ededed;
+  transition: all .2s ease;
+}
+.c3 .before:after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 7px;
+  left: 3px;
+  top: 3px;
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  transform: rotate(-45deg);
+  transition: border-color 0.2s ease;
+}
+.c3 .after {
+  padding-right: 25px;
+}
+.c3 .after:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ededed;
+  transition: all .2s ease;
+}
+.c3 .after:after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 7px;
+  right: 3px;
+  top: 2px;
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  transform: rotate(-45deg);
+  transition: border-color 0.2s ease;
+}
+.c3 input:checked + label:after {
+  border-color: #f00;
+}
+.c3 .bg:checked + label {
+  border-color: #e4e5df;
+  background-color: #e4e5df;
+}
