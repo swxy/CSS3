@@ -4,72 +4,55 @@
     <meta charset="UTF-8">
     <title>Basic Function Use</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" >
-
-    <style>
-         div {
-            margin-bottom:  20px;
-            border-bottom: 1px solid #999;
-            padding: 50px;
-         }
-         legend {
-            font-size: 24px;
-            width: 100%;
-            line-height: 30px;
-            border-bottom: 1px solid #ddd;
-         }
-         img {
-            width: 310px;
-            height: 206px;
-            position: relative;
-         }
-
-         img:after {
-            content: "";
-            width: 310px;
-            height: 206px;
-            display: block;
-            position: absolute;
-         }
-
-         .icon {
-            width: 200px;
-            height: 100px;
-            line-height: 100px;
-            text-align: center;
-            font-size: 20px;
-            background: #538674;
-            display: inline-block;
-            position: relative;
-         }
-
-         .icon:after {
-            content: "";
-            display: inline-block;
-            position: absolute;
-            box-sizing: border-box;
-            border: 1px solid #ddd;
-            width: 200px;
-            height: 100px;
-            top: 0;
-            left: 0;
-         }
-
-         .rotate {
-            transform: rotate(30deg);
-         }
-         .rotate:after {
-            transform: rotate(-30deg);
-         }
-
-         .translate {
-            transform: translate(30px, 10px);
-         }
-         .translate:after {
-            transform: translate(-30px, -10px);
-         }
-    </style>
 </head>
 <body>
+    <style style="display: block; white-space:pre; background-color: #ddd; max-height: 300px; overflow-y: auto;">
+        div {
+           margin-bottom:  20px;
+           border-bottom: 1px solid #999;
+           padding: 50px;
+        }
+        legend {
+           font-size: 24px;
+           width: 100%;
+           line-height: 30px;
+           border-bottom: 1px solid #ddd;
+        }
+        .icon {
+           width: 200px;
+           height: 100px;
+           line-height: 100px;
+           text-align: center;
+           font-size: 20px;
+           background: #538674;
+           display: inline-block;
+           position: relative;
+        }
+        .icon:after {
+           content: "";
+           display: inline-block;
+           position: absolute;
+           box-sizing: border-box;
+           border: 1px solid #ddd;
+           width: 200px;
+           height: 100px;
+           top: 0;
+           left: 0;
+        }
+        .rotate {
+           transform: rotate(30deg);
+        }
+        .rotate:after {
+           transform: rotate(-30deg);
+        }
+
+        .translate {
+           transform: translate(30px, 10px);
+        }
+        .translate:after {
+           transform: translate(-30px, -10px);
+        }
+   </style>
 <legend>rotate</legend>
 <div>
     <span class="rotate icon">rotate</span>
