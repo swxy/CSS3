@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Card Filp</title>
+  <style>
+    style,
+    script {
+      display: block;
+      white-space: pre;
+      max-height: 200px;
+      background-color: #ccc;
+      overflow-y: auto;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    style::before {
+      content: '样式文件';
+      display: block;
+      position: fixed;
+      background-color: burlywood;
+    }
+
+    script {
+      background-color: #ddd;
+    }
+
+    script::before {
+      content: ' js文件';
+      display: block;
+      position: fixed;
+      background-color: burlywood;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <figure class="front">1</figure>
+      <figure class="back">2</figure>
+    </div>
+  </div>
+
+  <style>
+    .container {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      width: 200px;
+      height: 260px;
+      position: relative;
+      margin: 0 auto 40px;
+      border: 1px solid #CCC;
+      cursor: pointer;
+      perspective: 800px;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+    }
+
+    .card.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card figure {
+      display: block;
+      height: 100%;
+      width: 100%;
+      line-height: 260px;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      font-size: 140px;
+      position: absolute;
+      margin: 0;
+      backface-visibility: hidden;
+    }
+
+    .card .front {
+      background: red;
+    }
+
+    .card .back {
+      background: blue;
+      transform: rotateY(180deg);
+    }
+  </style>
+
+  <script>
+    window.onload = function () {
+      var card = document.querySelector('.card');
+      document.querySelector('.container').onclick = function () {
+        card.classList.toggle('flipped');
+      }
+    }
+  </script>
+</body>
+
+</html>
