@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cube</title>
+  <link rel="stylesheet" href="../show-css-js.css">
+</head>
+
+<body>
+  <section class="container">
+    <div id="cube">
+      <figure class="front">1</figure>
+      <figure class="back">2</figure>
+      <figure class="right">3</figure>
+      <figure class="left">4</figure>
+      <figure class="top">5</figure>
+      <figure class="bottom">6</figure>
+    </div>
+  </section>
+
+  <section id="options">
+    <p id="show-buttons">
+      <button class="show-front">Show 1</button>
+      <button class="show-back">Show 2</button>
+      <button class="show-right">Show 3</button>
+      <button class="show-left">Show 4</button>
+      <button class="show-top">Show 5</button>
+      <button class="show-bottom">Show 6</button>
+    </p>
+    <p>
+      <button id="toggle-backface-visibility">Toggle Backface Visibility</button>
+    </p>
+  </section>
+
+  <style>
+      .container {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        margin: 20px auto 40px;
+        cursor: pointer;
+        perspective: 1000px;
+      }
+  
+      #cube {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+      }
+  
+      #cube figure {
+        margin: 0;
+        width: 196px;
+        height: 196px;
+        display: block;
+        position: absolute;
+        border: 2px solid black;
+        line-height: 196px;
+        font-size: 120px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+      }
+  
+      #cube .front {
+        background: hsla(0, 100%, 50%, 0.7);
+      }
+  
+      #cube .back {
+        background: hsla(60, 100%, 50%, 0.7);
+      }
+  
+      #cube .right {
+        background: hsla(120, 100%, 50%, 0.7);
+      }
+  
+      #cube .left {
+        background: hsla(180, 100%, 50%, 0.7);
+      }
+  
+      #cube .top {
+        background: hsla(240, 100%, 50%, 0.7);
+      }
+  
+      #cube .bottom {
+        background: hsla(300, 100%, 50%, 0.7);
+      }
+  
+      #cube .front {
+        transform: translateZ(100px);
+      }
+  
+      #cube .back {
+        transform: rotateX(180deg) translateZ(100px);
+      }
+  
+      #cube .right {
+        transform: rotateY(90deg) translateZ(100px);
+      }
+  
+      #cube .left {
+        transform: rotateY(-90deg) translateZ(100px);
+      }
+  
+      #cube .top {
+        transform: rotateX(90deg) translateZ(100px);
+      }
+  
+      #cube .bottom {
+        transform: rotateX(-90deg) translateZ(100px);
+      }
+  
+      #cube.show-back {
+        transform: translateZ(-100px) rotateX(-180deg);
+      }
+  
+      #cube.show-right {
+        transform: translateZ(-100px) rotateY(-90deg);
+      }
+  
+      #cube.show-left {
+        transform: translateZ(-100px) rotateY(90deg);
+      }
+  
+      #cube.show-top {
+        transform: translateZ(-100px) rotateX(-90deg);
+      }
+  
+      #cube.show-bottom {
+        transform: translateZ(-100px) rotateX(90deg);
+      }
+  
+      #cube.panels-backface-invisible figure {
+        backface-visibility: hidden;
+      }
+  
+      #options {
+        width: 300px;
+        margin: auto;
+      }
+    </style>
+
+  <script>
+
+    //Util
+    Element.prototype.hasClassName = function (a) {
+      return new RegExp("(?:^|\\s+)" + a + "(?:\\s+|$)").test(this.className);
+    };
+
+    Element.prototype.addClassName = function (a) {
+      if (!this.hasClassName(a)) {
+        this.className = [this.className, a].join(" ");
+      }
+    };
+
+    Element.prototype.removeClassName = function (b) {
+      if (this.hasClassName(b)) {
+        var a = this.className;
+        this.className = a.replace(new RegExp("(?:^|\\s+)" + b + "(?:\\s+|$)", "g"), " ");
+      }
+    };
+
+    Element.prototype.toggleClassName = function (a) {
+      this[this.hasClassName(a) ? "removeClassName" : "addClassName"](a);
+    };
+
+    var init = function () {
+      var box = document.querySelector('.container').children[0],
+        showPanelButtons = document.querySelectorAll('#show-buttons button'),
+        panelClassName = 'show-front',
+
+        onButtonClick = function (event) {
+          box.removeClassName(panelClassName);
+          panelClassName = event.target.className;
+          box.addClassName(panelClassName);
+        };
+
+      for (var i = 0, len = showPanelButtons.length; i < len; i++) {
+        showPanelButtons[i].addEventListener('click', onButtonClick, false);
+      }
+
+      document.getElementById('toggle-backface-visibility').addEventListener('click', function () {
+        box.toggleClassName('panels-backface-invisible');
+      }, false);
+
+    };
+
+    window.addEventListener('DOMContentLoaded', init, false);
+  </script>
+</body>
+
+</html>

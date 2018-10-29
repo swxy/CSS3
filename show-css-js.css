@@ -1,0 +1,28 @@
+style,
+script {
+  display: block;
+  white-space: pre;
+  max-height: 200px;
+  background-color: #ccc;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+style::before {
+  content: "样式文件";
+  display: block;
+  position: fixed;
+  background-color: burlywood;
+}
+
+script {
+  background-color: #ddd;
+}
+
+script::before {
+  content: " js文件";
+  display: block;
+  position: fixed;
+  background-color: burlywood;
+}
