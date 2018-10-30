@@ -12,6 +12,10 @@
 
 ## 动画效果
 ### step动画效果展示
-1. [模拟文本输入](http://xchb.word/CSS3/animation/animation-step-typing.html)
+1. [模拟文本输入](http://xchb.work/CSS3/animation/animation-step-typing.html)
 
    ![文本输入](preview/step-typing.gif)
+
+2. [打招呼](http://xchn.work/CSS3/animation/animation-step-hi.html)
+
+  ![hi](preview/step-hi.gif)
