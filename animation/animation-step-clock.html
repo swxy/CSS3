@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Clock</title>
+  <link rel="stylesheet" href="../show-css-js.css">
+</head>
+
+<body>
+  <div class="contain-clock">
+    <div class="face-1">
+      <div class="hour"></div>
+      <div class="minute"></div>
+      <div class="second"></div>
+      <div class="center"></div>
+    </div>
+
+    <div class="face-2">
+      <div class="line"></div>
+      <div class="line line-2"></div>
+      <div class="line line-3"></div>
+      <div class="line line-4"></div>
+      <div class="line line-5"></div>
+      <div class="line line-6"></div>
+    </div>
+  </div>
+
+  <div class="cj-wrapper">
+    <style>
+      .contain-clock {
+        position: relative;
+        margin: 0 auto 20px;
+        width: 155px;
+      }
+
+      p {
+        text-align: center;
+      }
+
+      .face-1 {
+        position: absolute;
+        top: 23px;
+        left: 23px;
+        background: white;
+        border-radius: 50%;
+        width: 109px;
+        height: 109px;
+        z-index: 3;
+      }
+
+      .face-2 {
+        position: relative;
+        margin: auto;
+        background: white;
+        border: 15px solid #ed6e46;
+        border-radius: 50%;
+        width: 125px;
+        height: 125px;
+        z-index: 2;
+      }
+
+      .line {
+        position: absolute;
+        left: 50%;
+        margin-left: -3px;
+        background: gray;
+        width: 6px;
+        height: 126px;
+      }
+
+      .line-2 {
+        left: 63px;
+        transform: rotate(90deg);
+      }
+
+      .line-3 {
+        transform: rotate(30deg);
+        margin-left: -1px;
+        width: 2px;
+      }
+
+      .line-4 {
+        transform: rotate(-30deg);
+        margin-left: -1px;
+        width: 2px;
+      }
+
+      .line-5 {
+        transform: rotate(60deg);
+        margin-left: -1px;
+        width: 2px;
+      }
+
+      .line-6 {
+        transform: rotate(-60deg);
+        -webkit-transform: rotate(-60deg);
+        margin-left: -1px;
+        width: 2px;
+      }
+
+      .hour {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -4px;
+        background: #f8b65b;
+        transform-origin: top;
+        border-radius: 50px;
+        width: 8px;
+        height: 35px;
+        z-index: 5;
+      }
+
+      .minute {
+        position: absolute;
+        top: 5px;
+        left: 55px;
+        margin-left: -4px;
+        background: #f8b65b;
+        border-radius: 50px;
+        transform-origin: bottom;
+        width: 8px;
+        height: 50px;
+        z-index: 3;
+        animation: tick-tock 3600s steps(60, end) infinite;
+      }
+
+      .second {
+        position: absolute;
+        top: 5px;
+        left: 56px;
+        margin-left: -2px;
+        background: #333333;
+        border-radius: 50px;
+        transform-origin: bottom;
+        -webkit-transform-origin: bottom;
+        width: 2px;
+        height: 50px;
+        z-index: 5;
+        animation: tick-tock 60s steps(60, end) infinite;
+      }
+
+      .center {
+        position: absolute;
+        top: 62px;
+        margin-top: -15px;
+        left: 55px;
+        margin-left: -8px;
+        border-radius: 50%;
+        background: #ed6e46;
+        width: 16px;
+        height: 16px;
+        z-index: 20;
+      }
+
+      @keyframes tick-tock {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </div>
+  <p>from: <a href="https://designmodo.com/demo/stepscss/index.html">https://designmodo.com/demo/stepscss/index.html</a></p>
+</body>
+
+</html>

@@ -16,6 +16,10 @@
 
    ![文本输入](preview/step-typing.gif)
 
-2. [打招呼](http://xchn.work/CSS3/animation/animation-step-hi.html)
+2. [打招呼](http://xchb.work/CSS3/animation/animation-step-hi.html)
 
   ![hi](preview/step-hi.gif)
+
+3. [钟表](http://xchb.work/CSS3/animation/animation-step-clock.html): 钟表效果
+  
+  ![clock](preview/step-clock.gif)
