@@ -2,17 +2,17 @@ style,
 script {
   display: block;
   white-space: pre;
-  max-height: 200px;
+  height: 100%;
   background-color: #ccc;
   overflow-y: auto;
-  margin-bottom: 20px;
-  position: relative;
 }
 
 style::before {
-  content: "样式文件";
+  content: " CSS ";
   display: block;
-  position: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
   background-color: burlywood;
 }
 
@@ -21,8 +21,15 @@ script {
 }
 
 script::before {
-  content: " js文件";
+  content: " JS ";
   display: block;
   position: fixed;
   background-color: burlywood;
+}
+
+.cj-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
