@@ -9,3 +9,9 @@
 - [transform/transform-cube.html](http://xchb.work/CSS3/transform/transform-cube.html): 实现魔方效果
 
   ![魔方](preview/transform-cube.gif)
+
+## 动画效果
+### step动画效果展示
+1. [模拟文本输入](http://xchb.word/CSS3/animation/animation-step-typing.html)
+
+   ![文本输入](preview/step-typing.gif)
