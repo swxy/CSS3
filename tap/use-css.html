@@ -4,6 +4,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>use css</title>
+  <style>
+      button {
+        width: 400px;
+        height: 200px;
+        border: 1px solid #ddd;
+        display: block;
+        margin-bottom: 100px;
+        font-size: 20px;
+      }
+      p {
+        font-size: 18px;
+      }
+  </style>
 </head>
 <body>
   <style>
@@ -13,8 +26,53 @@
     .btn2 {
       touch-action: manipulation;
     }
+    .btn3 {
+      touch-action: initial;
+    }
   </style>
   <button class="btn1" onclick="javascript:alert('hello world!')">use touch-action: none</button>
   <button class="btn2" onclick="javascript:alert('hello world!!!')">use touch-action:manipulation</button>
+  <button class="btn3" onclick="javascript:alert('hello world!!!')">use touch-action:initial</button>
+  <p id="log"></p>
+  <script>
+      var $btn1 = document.querySelector('.btn1');
+      var $btn2 = document.querySelector('.btn2');
+      var $btn3 = document.querySelector('.btn3');
+      var $log = document.querySelector('#log');
+      var touchTime, clickTime;
+      $btn1.onclick = function () {
+        clickTime = Date.now();
+        $log.innerHTML = [
+          'touch时间戳为：' + touchTime,
+          'click 时间戳为：' + clickTime,
+          'click - touch = ' + (clickTime - touchTime)
+          ].join('<br>')
+      }
+      $btn1.ontouchstart = function () {
+        touchTime = Date.now();
+      }
+      $btn2.onclick = function () {
+        clickTime = Date.now();
+        $log.innerHTML = [
+          'touch时间戳为：' + touchTime,
+          'click 时间戳为：' + clickTime,
+          'click - touch = ' + (clickTime - touchTime)
+          ].join('<br>')
+      }
+      $btn2.ontouchstart = function () {
+        touchTime = Date.now();
+      }
+      $btn3.onclick = function () {
+        clickTime = Date.now();
+        $log.innerHTML = [
+          'touch时间戳为：' + touchTime,
+          'click 时间戳为：' + clickTime,
+          'click - touch = ' + (clickTime - touchTime)
+          ].join('<br>')
+      }
+      $btn3.ontouchstart = function () {
+        touchTime = Date.now();
+      }
+    </script>
 </body>
 </html>

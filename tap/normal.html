@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Normal</title>
-</head>
-<body>
-  <button onclick="javascript:alert('hello world!')">this is normal has delay</button>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Normal</title>
+    <style>
+      button {
+        width: 400px;
+        height: 200px;
+        border: 1px solid #ddd;
+        font-size: 20px;
+      }
+      p {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn" onclick="javascript:alert('hello world!')">
+      this is normal has delay
+    </button>
+    <p id="log"></p>
+    <script>
+        var $btn = document.querySelector('#btn');
+        var touchTime, clickTime;
+        $btn.onclick = function () {
+          clickTime = Date.now();
+          document.querySelector('#log').innerHTML = [
+            'touch时间戳为：' + touchTime,
+            'click 时间戳为：' + clickTime,
+            'click - touch = ' + (clickTime - touchTime)
+            ].join('<br>')
+        }
+        $btn.ontouchstart = function () {
+          touchTime = Date.now();
+        }
+      </script>
+  </body>
 </html>

@@ -5,8 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>use meta</title>
+  <style>
+  button {
+    width: 100px;
+    height: 50px;
+    border: 1px solid #ddd;
+  }
+  p {
+    font-size: 16px;
+  }
+  </style>
 </head>
 <body>
-  <button onclick="javascript:alert('hello world!')">use meta</button>
+  <button id="btn" onclick="javascript:alert('hello world!')">use meta</button>
+  <p id="log">
+  </p>
+
+  <script>
+    var $btn = document.querySelector('#btn');
+    var touchTime, clickTime;
+    $btn.onclick = function () {
+      clickTime = Date.now();
+      document.querySelector('#log').innerHTML = [
+        'touch时间戳为：' + touchTime,
+        'click 时间戳为：' + clickTime,
+        'click - touch = ' + (clickTime - touchTime)
+        ].join('<br>')
+    }
+    $btn.ontouchstart = function () {
+      touchTime = Date.now();
+    }
+  </script>
 </body>
 </html>
