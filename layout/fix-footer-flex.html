@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flex</title>
+</head>
+<body>
+  <style style="display:block;white-space: pre; height: 100px;overflow: auto;" contenteditable="true">
+  html {
+    height: 100%;
+  }
+  body {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+  header {
+    height: 100px;
+    background-color: aquamarine;
+  }
+  article {
+    flex: 1;
+    background-color:blueviolet;
+  }
+  footer {
+    height: 100px;
+    background-color: blanchedalmond;
+  }
+  </style>
+  <header>我是头部</header>
+  <article>
+    中间部分
+  </article>
+  <footer>底部永远固定最下面</footer>
+</body>
+</html>
