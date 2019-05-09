@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title>Document</title>
+  <style>
+    style {
+      display: block;
+      white-space: pre;
+    }
+    .tip {
+      border: 1px dashed;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <style contenteditable="plaintext-only">
+      .header {
+        background: #ddd;
+        margin-bottom: 50px;
+      }
+    </style>
+  </div>
+  <div class="footer">
+    <style contenteditable="plaintext-only">
+      .footer {
+        background: #eee;
+        margin-top: 20px;
+      }
+    </style>
+  </div>
+  <div class="tip">
+    可以边距样式产生进制折叠
+    <ol>
+      <li>设置display为 inline 或者 inline 开头的值</li>
+      <li>两个元素都设置float属性，然后.footer中清楚一下浮动
+      </li>
+    </ol>
+  </div>
+</body>
+</html>
